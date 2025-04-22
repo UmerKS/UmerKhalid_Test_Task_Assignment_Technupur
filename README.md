@@ -6,5 +6,5 @@
 
 <p align="center">
 
-  <img src="https://github.com/user-attachments/assets/824dc4fb-16e4-48e3-8581-541fc96d2388" width="100%">
-  <img src="https://github.com/user-attachments/assets/f9138b09-b23b-41ad-8095-d4632a767a4f" width="100%">
+  <img src="https://github.com/user-attachments/assets/824dc4fb-16e4-48e3-8581-541fc96d2388" width="50%">
+  <img src="https://github.com/user-attachments/assets/f9138b09-b23b-41ad-8095-d4632a767a4f" width="50%">
