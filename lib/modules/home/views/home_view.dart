@@ -43,68 +43,72 @@ class HomeView extends StatelessWidget {
             }
             return ProductWidget();
           }),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            color: Colors.teal[400],
-            margin: EdgeInsets.all(16),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    padding: EdgeInsets.all(8),
-                    child: Image.asset(
-                      AppAssets.deliveryIcon,
-                      height: 46.h,
-                      width: 46.w,
-                  
-                    ),
-                  ),
-                  SizedBox(width: 12),
+          Obx(() {
+            if (controller.categoriesList.isEmpty) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Free Shipping Over \$0',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Free returns and exchange',
-                          style: TextStyle(color: Colors.white, fontSize: 13),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                    ),
-                    padding: EdgeInsets.all(10),
-                    child: Image.asset(
-                      AppAssets.phoneIcon,
-                      height: 40.h,
-                      width: 40.w,
-                    
-                    ),
-                  ),
-                ],
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
               ),
-            ),
-          ),
+              color: Colors.teal[400],
+              margin: EdgeInsets.all(16),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      padding: EdgeInsets.all(8),
+                      child: Image.asset(
+                        AppAssets.deliveryIcon,
+                        height: 46.h,
+                        width: 46.w,
+                      ),
+                    ),
+                    SizedBox(width: 12),
+
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Free Shipping Over \$0',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'Free returns and exchange',
+                            style: TextStyle(color: Colors.white, fontSize: 13),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Image.asset(
+                        AppAssets.phoneIcon,
+                        height: 40.h,
+                        width: 40.w,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }),
         ],
       ),
     );

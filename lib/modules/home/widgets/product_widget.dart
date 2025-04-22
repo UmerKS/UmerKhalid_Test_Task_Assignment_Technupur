@@ -12,7 +12,6 @@ class ProductWidget extends StatelessWidget {
     final HomeController controller = Get.find();
     return Column(
       children: [
-    
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Obx(() {
@@ -40,7 +39,7 @@ class ProductWidget extends StatelessWidget {
         ),
 
         SizedBox(
-          height: 225.h,
+          height: 250.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: controller.products.length,
@@ -64,8 +63,8 @@ class ProductWidget extends StatelessWidget {
                               children: [
                                 Image.network(
                                   product.image,
-                                  height: 120.h,
-                                  width: 120.w,
+                                  height: 150.h,
+                                  width: 150.w,
                                   fit: BoxFit.cover,
                                 ),
                                 const SizedBox(height: 8),
@@ -87,7 +86,7 @@ class ProductWidget extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(width: 5),
-                                    
+
                                     Text(
                                       '\$${calculateDiscountedPrice(product.price, product.discountPercentage).toStringAsFixed(2)}',
                                       style: const TextStyle(
@@ -97,8 +96,7 @@ class ProductWidget extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                product.status ==
-                                        false 
+                                product.status == false
                                     ? Card(
                                       color: AppColors.yellowlight,
                                       child: Container(
